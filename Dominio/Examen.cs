@@ -1,0 +1,35 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BibliotecaGrupo11.Dominio
+{
+    internal class Examen
+    {
+        public int IdExamen { get; set; }
+        public DateTime FechaExamen { get; set; }
+        public Materia MateriaExamen { get; set; }
+        public Docente DocenteExamen { get; set; }
+        public List<DetalleAlumnoExamen> DetallesExamen { get; set; }
+
+        public Examen()
+        {
+            IdExamen = 0;
+            FechaExamen = DateTime.MinValue;
+            MateriaExamen = new Materia();
+            DocenteExamen = new Docente();
+            DetallesExamen = new List<DetalleAlumnoExamen>();
+        }
+
+        public Examen(int id, DateTime fec, Materia mat, Docente doc, List<DetalleAlumnoExamen> det)
+        {
+            IdExamen = id;
+            FechaExamen = fec;
+            MateriaExamen = mat;
+            DocenteExamen = doc;
+            DetallesExamen = det;
+        }
+    }
+}
