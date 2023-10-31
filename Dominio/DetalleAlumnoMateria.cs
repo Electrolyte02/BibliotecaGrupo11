@@ -34,5 +34,25 @@ namespace BibliotecaGrupo11.Dominio
             FechaEstadoDetalle = fecEst;
             EvaluacionesDetalle = lEvaluaciones;
         }
+
+        public void AgregarDetalle(Evaluacion eval)
+        {
+            EvaluacionesDetalle.Add(eval);
+        }
+
+        public void QuitarDetalle(int posicion)
+        {
+            EvaluacionesDetalle.RemoveAt(posicion);
+        }
+
+        public double CalcularPromedio()
+        {
+            double aux = 0;
+            foreach(Evaluacion ev in EvaluacionesDetalle)
+            {
+                aux += ev.Nota;
+            }
+            return aux/EvaluacionesDetalle.Count();
+        }
     }
 }

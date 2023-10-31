@@ -31,5 +31,25 @@ namespace BibliotecaGrupo11.Dominio
             DocenteExamen = doc;
             DetallesExamen = det;
         }
+
+        public void AgregarDetalle(DetalleAlumnoExamen detalle)
+        {
+            DetallesExamen.Add(detalle);
+        }
+
+        public void QuitarDetalle(int posicion)
+        {
+            DetallesExamen.RemoveAt(posicion);
+        }
+
+        public double CalcularPromedio()
+        {
+            double aux = 0;
+            foreach(DetalleAlumnoExamen det in DetallesExamen)
+            {
+                aux += det.NotaDetalle;
+            }
+            return aux/DetallesExamen.Count();
+        }
     }
 }

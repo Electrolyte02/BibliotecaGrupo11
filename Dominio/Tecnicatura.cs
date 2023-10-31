@@ -11,22 +11,19 @@ namespace BibliotecaGrupo11.Dominio
         public int IdTecnicatura { get; set; }
         public string NombreTecnicatura { get; set; }
         public string TituloTecnicatura { get; set; }
-        public List<Materia> MateriasTecnicatura { get; set; }
 
         public Tecnicatura()
         {
             IdTecnicatura = 0;
             NombreTecnicatura = string.Empty;
             TituloTecnicatura=string.Empty;
-            MateriasTecnicatura = new List<Materia>();
         }
 
-        public Tecnicatura(int id,string nom,string tit,List<Materia> lMaterias)
+        public Tecnicatura(int id,string nom,string tit)
         {
             IdTecnicatura = id;
             NombreTecnicatura = nom;
             TituloTecnicatura = tit;
-            MateriasTecnicatura = lMaterias;
         }
 
         public override string ToString()

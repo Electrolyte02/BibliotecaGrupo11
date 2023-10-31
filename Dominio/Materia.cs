@@ -10,16 +10,19 @@ namespace BibliotecaGrupo11.Dominio
     {
         public int IdMateria { get; set; }
         public string NombreMateria { get; set; }
+        public Tecnicatura TecnicaturaMateria { get; set; }
 
         public Materia()
         {
             IdMateria = 0;
             NombreMateria = string.Empty;
+            TecnicaturaMateria = new Tecnicatura();
         }
-        public Materia(int id,string nom)
+        public Materia(int id,string nom,Tecnicatura tec)
         {
             IdMateria = id;
             NombreMateria = nom;
+            TecnicaturaMateria = tec;
         }
 
         public override string ToString()
